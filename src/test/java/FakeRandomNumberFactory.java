@@ -3,8 +3,8 @@ import java.util.List;
 
 public class FakeRandomNumberFactory implements AbleToProduceRandomNumber {
 
-    public final int MOVE_NUMBER = 3;
-    public final int STOP_NUMBER = 4;
+    public final int MOVE_NUMBER = 4;
+    public final int STOP_NUMBER = 3;
     public final int MOVE_TARGET_CAR_COUNT = 2;
 
     private List<Integer> numberPool;
@@ -19,10 +19,10 @@ public class FakeRandomNumberFactory implements AbleToProduceRandomNumber {
 
     private void settingFakeData(int carsLength) {
         for (int i = 0; i < carsLength - MOVE_TARGET_CAR_COUNT; i++) {
-            this.numberPool.add(MOVE_NUMBER);
+            this.numberPool.add(STOP_NUMBER);
         }
         for (int i = carsLength - MOVE_TARGET_CAR_COUNT; i < carsLength; i++) {
-            this.numberPool.add(STOP_NUMBER);
+            this.numberPool.add(MOVE_NUMBER);
         }
     }
 
