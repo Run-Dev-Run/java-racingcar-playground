@@ -14,8 +14,7 @@ class TryCountTest {
     @DisplayName("TryCount는 0 이하를 인자로 전달할 경우 예외를 던집니다.")
     void test_construct_TryCount_validate_less_than_zero() {
         assertThatThrownBy(() -> new TryCount(MORE_THAN_ZERO_NUMBER))
-            .isInstanceOf(IllegalArgumentException.class)
-            .hasMessage(TryCount.TRY_COUNT_INVALID_MESSAGE);
+            .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test

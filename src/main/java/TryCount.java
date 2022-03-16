@@ -1,6 +1,6 @@
 public class TryCount {
-    public static final String TRY_COUNT_INVALID_MESSAGE = "Try 횟수는 1 이상만 입력이 가능합니다.";
-    public static final int MIN_TRY_COUNT = 0;
+    private final String TRY_COUNT_INVALID_MESSAGE = "Try 횟수는 1 이상만 입력이 가능합니다.";
+    private final int MIN_TRY_COUNT = 0;
 
     private final int count;
 

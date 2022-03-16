@@ -13,7 +13,7 @@ public class Race {
     }
 
     public void start() {
-        int currentTryCount = TryCount.MIN_TRY_COUNT;
+        int currentTryCount = 0;
         while (tryCount.isOverThan(currentTryCount)){
             this.cars.move(factory);
             currentTryCount++;
