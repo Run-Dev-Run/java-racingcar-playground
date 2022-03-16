@@ -10,9 +10,9 @@ import org.junit.jupiter.api.Test;
 @DisplayName("Race 단위 테스트")
 public class RaceTest {
 
-    public final int TRY_COUNT = 5;
+    private final int TRY_COUNT = 5;
 
-    public RandomNumberFactory factory;
+    private RandomNumberFactory factory;
     public Cars cars;
     public Race race;
 

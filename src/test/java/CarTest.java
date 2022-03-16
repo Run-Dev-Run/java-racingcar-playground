@@ -11,8 +11,8 @@ import org.junit.jupiter.params.provider.MethodSource;
 public class CarTest {
 
     private static final BasicRandomNumber RANDOM_NUMBER_MORE_THAN_FOUR_OBJECT = new BasicRandomNumber(4);
-    public static final BasicRandomNumber RANDOM_NUMBER_LESS_THAN_FOUR_OBJECT = new BasicRandomNumber(3);
-    public static final String DEFAULT_CAR_NAME = "name";
+    private static final BasicRandomNumber RANDOM_NUMBER_LESS_THAN_FOUR_OBJECT = new BasicRandomNumber(3);
+    private static final String DEFAULT_CAR_NAME = "name";
 
     private Car car;
 

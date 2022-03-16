@@ -3,9 +3,9 @@ import java.util.List;
 
 public class FakeBasicRandomNumberFactory implements RandomNumberFactory {
 
-    public final int MOVE_NUMBER = 4;
-    public final int STOP_NUMBER = 3;
-    public final int MOVE_TARGET_CAR_COUNT = 2;
+    private final int MOVE_NUMBER = 4;
+    private final int STOP_NUMBER = 3;
+    private final int MOVE_TARGET_CAR_COUNT = 2;
 
     private final List<Integer> numberPool;
     private int currentIndex;

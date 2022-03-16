@@ -5,7 +5,6 @@ public class Position {
     private final int ZERO = 0;
     private int step;
 
-
     public Position() {
         this.step = ZERO;
     }

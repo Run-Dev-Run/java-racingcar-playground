@@ -2,7 +2,7 @@ import java.util.Objects;
 
 public class Car {
 
-    public final int MOVE_PERMISSION_MIN_NUMBER = 4;
+    private final int MOVE_PERMISSION_MIN_NUMBER = 4;
 
     private final Name name;
     private final Position position;

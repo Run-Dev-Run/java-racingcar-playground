@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 @DisplayName("TryCount 단위 테스트")
 class TryCountTest {
 
-    public static final int MORE_THAN_ZERO_NUMBER = 0;
-    public static final int LESS_THAN_ZERO_NUMBER = 1;
+    private final int MORE_THAN_ZERO_NUMBER = 0;
+    private final int LESS_THAN_ZERO_NUMBER = 1;
 
     @Test
     @DisplayName("TryCount는 0 이하를 인자로 전달할 경우 예외를 던집니다.")

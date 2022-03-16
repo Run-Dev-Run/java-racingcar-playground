@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 @DisplayName("Position 단위 테스트")
 class PositionTest {
 
-    public final int INVALID_STEP_NUMBER = -1;
+    private final int INVALID_STEP_NUMBER = -1;
     private Position position;
 
     @BeforeEach
