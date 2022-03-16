@@ -1,8 +1,5 @@
-public class RandomNumberFactory implements AbleToProduceRandomNumber{
+public interface RandomNumberFactory {
 
-    @Override
-    public RandomNumber produce() {
-        return new RandomNumber();
-    }
+    BasicRandomNumber produce();
 
 }

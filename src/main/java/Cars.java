@@ -20,7 +20,7 @@ public class Cars {
         }
     }
 
-    public void move(AbleToProduceRandomNumber factory) {
+    public void move(RandomNumberFactory factory) {
         cars.forEach(car -> car.move(factory.produce()));
     }
 

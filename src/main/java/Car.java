@@ -23,8 +23,8 @@ public class Car {
         }
     }
 
-    public void move(RandomNumber randomNumber) {
-        if (randomNumber.isMoreThan(MOVE_PERMISSION_MIN_NUMBER)) {
+    public void move(BasicRandomNumber basicRandomNumber) {
+        if (basicRandomNumber.isMoreThan(MOVE_PERMISSION_MIN_NUMBER)) {
             position.moveOneStep();
         }
     }
