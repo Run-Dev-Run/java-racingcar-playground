@@ -7,10 +7,10 @@ public abstract class AbstractRandomNumber {
     private final int min;
 
     public AbstractRandomNumber(int number, int max, int min) {
-        validate(number);
-        this.number = number;
         this.max = max;
         this.min = min;
+        validate(number);
+        this.number = number;
     }
 
     private void validate(int number) {
