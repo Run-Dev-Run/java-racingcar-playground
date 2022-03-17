@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class FakeBasicRandomNumberFactory implements RandomNumberFactory {
+public class FakeRandomNumberFactory extends NumberFactory {
 
     private final int MOVE_NUMBER = 4;
     private final int STOP_NUMBER = 3;
@@ -10,7 +10,7 @@ public class FakeBasicRandomNumberFactory implements RandomNumberFactory {
     private final List<Integer> numberPool;
     private int currentIndex;
 
-    public FakeBasicRandomNumberFactory(int carsLength) {
+    public FakeRandomNumberFactory(int carsLength) {
         this.currentIndex = 0;
         this.numberPool = new ArrayList<>();
 
@@ -27,10 +27,10 @@ public class FakeBasicRandomNumberFactory implements RandomNumberFactory {
     }
 
     @Override
-    public BasicRandomNumber produce() {
+    public RandomNumber produce() {
         int numberPoolIndex = currentIndex % numberPool.size();
         plusCurrentIndex();
-        return new BasicRandomNumber(numberPool.get(numberPoolIndex));
+        return new RandomNumber(numberPool.get(numberPoolIndex));
     }
 
     private void plusCurrentIndex() {

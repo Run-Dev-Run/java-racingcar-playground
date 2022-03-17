@@ -49,7 +49,7 @@ class CarsTest {
             )
         );
         Cars cars = new Cars(inputCarList);
-        RandomNumberFactory factory = new FakeBasicRandomNumberFactory(inputCarList.size());
+        NumberFactory factory = new FakeRandomNumberFactory(inputCarList.size());
 
         cars.move(factory);
 

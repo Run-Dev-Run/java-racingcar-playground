@@ -12,7 +12,7 @@ public class RaceTest {
 
     private final int TRY_COUNT = 5;
 
-    private RandomNumberFactory factory;
+    private NumberFactory factory;
     public Cars cars;
     public Race race;
 
@@ -26,7 +26,7 @@ public class RaceTest {
                 new Car("e")
             )
         );
-        factory = new FakeBasicRandomNumberFactory(inputCarList.size());
+        factory = new FakeRandomNumberFactory(inputCarList.size());
         cars = new Cars(inputCarList);
         race = new Race(TRY_COUNT, cars, factory);
     }

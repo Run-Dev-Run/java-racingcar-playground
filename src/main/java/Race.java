@@ -4,9 +4,9 @@ public class Race {
 
     private final Cars cars;
 
-    private final RandomNumberFactory factory;
+    private final NumberFactory factory;
 
-    public Race(int tryCount, Cars cars, RandomNumberFactory factory) {
+    public Race(int tryCount, Cars cars, NumberFactory factory) {
         this.tryCount = new TryCount(tryCount);
         this.cars = cars;
         this.factory = factory;
