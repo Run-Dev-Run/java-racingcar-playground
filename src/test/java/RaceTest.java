@@ -32,8 +32,7 @@ public class RaceTest {
     }
 
     @Test
-    @DisplayName("start()는 tryCount번 반복해서 자동차들을 RandomNumber에 따라 전진시킵니다.")
-    void test_start() {
+    void start는_tryCount번_반복해서_자동차들을_RandomNumber에_따라_전진시킵니다() {
         List<Car> resultCarList = inputCarNames.stream()
             .map(s -> new Car(s, TRY_COUNT, strategy))
             .collect(Collectors.toList());

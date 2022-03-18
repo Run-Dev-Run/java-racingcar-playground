@@ -16,16 +16,14 @@ public class RangeableRandomNumberTest {
     public final int MAX_RANDOM_NUMBER = 9;
 
     @ParameterizedTest
-    @DisplayName("RandomNumber에 음수나 9 이상의 수가 주어진다면, 예외를 던집니다.")
     @ValueSource(ints = {-1, 10})
-    void test_generate_RandomNumber_validate_invalid_number(int number) {
+    void RandomNumber에_음수나_9_이상의_수가_주어진다면_예외를_던집니다(int number) {
         assertThatThrownBy(() -> new RangeableRandomNumber(number))
             .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
-    @DisplayName("RandomNumber는 0 이상 9이하의 난수로 생성됩니다.")
-    void test_generate_random_number_range() {
+    void RandomNumber는_0_이상_9이하의_난수로_생성됩니다() {
         RangeableRandomNumber testBasicRangeableRandomNumber01 = new RangeableRandomNumber(1);
         RangeableRandomNumber testBasicRangeableRandomNumber02 = new RangeableRandomNumber(2);
         RangeableRandomNumber testBasicRangeableRandomNumber03 = new RangeableRandomNumber(3);
@@ -41,18 +39,16 @@ public class RangeableRandomNumberTest {
     }
 
     @ParameterizedTest
-    @DisplayName("isMoreThan()는 RandomNumber가 주어진 파라미터 이상인지 검사합니다.")
     @CsvSource(value = {"4:true", "5:true", "6:false"}, delimiter = ':')
-    void test_isMoreThan(int element, boolean expected) {
+    void isMoreThan는_RandomNumber가_주어진_파라미터_이상인지_검사합니다(int element, boolean expected) {
         RangeableRandomNumber basicRangeableRandomNumberFive = new RangeableRandomNumber(5);
 
         assertThat(basicRangeableRandomNumberFive.isMoreThan(element)).isEqualTo(expected);
     }
 
     @ParameterizedTest
-    @DisplayName("isMoreThan()는 RandomNumber가 주어진 파라미터 이하인지 검사합니다.")
     @CsvSource(value = {"4:false", "5:true", "6:true"}, delimiter = ':')
-    void test_isLessThan(int element, boolean expected) {
+    void isLessThan는_RandomNumber가_주어진_파라미터_이하인지_검사합니다(int element, boolean expected) {
         RangeableRandomNumber basicRangeableRandomNumberFive = new RangeableRandomNumber(5);
 
         assertThat(basicRangeableRandomNumberFive.isLessThan(element)).isEqualTo(expected);

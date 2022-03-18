@@ -16,9 +16,8 @@ import org.junit.jupiter.params.provider.MethodSource;
 class CarsTest {
 
     @ParameterizedTest
-    @DisplayName("Cars는 Null이나 빈 리스트가 인자로 주어진다면 예외를 덥집니다.")
     @MethodSource("provideInvalidArgumentsForConstructValidation")
-    void test_construct_validate_invalid_arguments(List<Car> input) {
+    void Cars는_Null이나_빈_리스트가_인자로_주어진다면_예외를_덥집니다(List<Car> input) {
         assertThatThrownBy(() -> new Cars(input))
             .isInstanceOf(IllegalArgumentException.class);
     }

@@ -14,7 +14,7 @@ public class CarTest {
     @ParameterizedTest
     @DisplayName("moveByStrategy()는 주어진 전략에 따라 자동차를 움직입니다.")
     @MethodSource("provideRandomNumberFactory")
-    void test_move(NumberFactory fakeRandomNumberFactory, Car expected) {
+    void moveByStrategy는_주어진_전략에_따라_자동차를_움직입니다(NumberFactory fakeRandomNumberFactory, Car expected) {
 
         Car car = new Car(DEFAULT_CAR_NAME, new MoveByRandomNumberStrategy(fakeRandomNumberFactory));
         car.moveByStrategy();

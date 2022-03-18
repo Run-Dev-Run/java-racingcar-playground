@@ -12,16 +12,14 @@ class NameTest {
     private final String NAME_LENGTH_OVER_MESSAGE = "자동차 이름은 5자를 초과할 수 없다.";
 
     @Test
-    @DisplayName("이름의 길이는 5자를 초과 할 수 없다.")
-    void test_name_validate_over_max_length() {
+    void 이름의_길이는_5자를_초과_할_수_없다() {
         assertThatThrownBy(() -> new Name(INVALID_NAME))
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage(NAME_LENGTH_OVER_MESSAGE);
     }
 
     @Test
-    @DisplayName("길이 5이하의 문자열을 통해 Name 객체를 생성한다.")
-    void test_name_validate_valid() {
+    void 길이_5이하의_문자열을_통해_Name_객체를_생성한다() {
         success(new Name(VALID_NAME));
     }
 

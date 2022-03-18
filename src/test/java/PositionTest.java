@@ -18,18 +18,17 @@ class PositionTest {
     }
 
     @Test
-    @DisplayName("Position은 step에 음수가 입력된다면, 예외를 던집니다.")
-    void test_construct_Position_validate_invalid_step_number() {
+    void Position은_step에_음수가_입력된다면_예외를_던집니다() {
         assertThatThrownBy(() -> new Position(INVALID_STEP_NUMBER))
             .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
-    @DisplayName("moveOneStep()는 Position의 step을 1 증가 시킨 후 반환합니다..")
-    void test_moveOneStep() {
+    void moveOneStep은_Position의_step을_1_증가_시킨_후_반환합니다() {
         Position result = this.position.moveOneStep();
         Position expected = new Position(1);
 
         assertThat(result).isEqualTo(expected);
     }
+
 }
