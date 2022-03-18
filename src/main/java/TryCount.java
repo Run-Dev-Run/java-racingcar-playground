@@ -1,4 +1,5 @@
 public class TryCount {
+
     private final String TRY_COUNT_INVALID_MESSAGE = "Try 횟수는 1 이상만 입력이 가능합니다.";
     private final int MIN_TRY_COUNT = 0;
 
@@ -15,8 +16,10 @@ public class TryCount {
         }
     }
 
-    public boolean isOverThan(int currentTryCount) {
-        return count > currentTryCount;
+    public void startTryUpToTryCount(Cars cars) {
+        for (int i = 0; i < count; i++) {
+            cars.move();
+        }
     }
-    
+
 }

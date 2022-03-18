@@ -32,7 +32,7 @@ public class RaceTest {
     }
 
     @Test
-    void start는_tryCount번_반복해서_자동차들을_RandomNumber에_따라_전진시킵니다() {
+    void start는_tryCount번_반복해서_자동차들을_Strategy에_따라_전진시킵니다() {
         List<Car> resultCarList = inputCarNames.stream()
             .map(s -> new Car(s, TRY_COUNT, strategy))
             .collect(Collectors.toList());

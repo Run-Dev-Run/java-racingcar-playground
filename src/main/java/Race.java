@@ -1,8 +1,8 @@
 public class Race {
 
-    private final TryCount tryCount;
+    private TryCount tryCount;
 
-    private final Cars cars;
+    private Cars cars;
 
     public Race(int tryCount, Cars cars) {
         this.tryCount = new TryCount(tryCount);
@@ -10,11 +10,7 @@ public class Race {
     }
 
     public void start() {
-        int currentTryCount = 0;
-        while (tryCount.isOverThan(currentTryCount)){
-            this.cars.move();
-            currentTryCount++;
-        }
+        tryCount.startTryUpToTryCount(cars);
     }
 
 }
