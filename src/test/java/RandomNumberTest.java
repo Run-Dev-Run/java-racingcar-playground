@@ -10,7 +10,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 @DisplayName("RandomNumber 단위테스트")
-public class BasicRandomNumberTest {
+public class RandomNumberTest {
 
     public final int MIN_RANDOM_NUMBER = 0;
     public final int MAX_RANDOM_NUMBER = 9;

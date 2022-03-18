@@ -4,6 +4,7 @@ import static org.junit.platform.commons.function.Try.success;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+@DisplayName("Name 단위테스트")
 class NameTest {
 
     private final String VALID_NAME = "12345";

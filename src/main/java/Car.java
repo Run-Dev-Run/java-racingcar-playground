@@ -2,31 +2,32 @@ import java.util.Objects;
 
 public class Car {
 
-    private final int MOVE_PERMISSION_MIN_NUMBER = 4;
-
     private final Name name;
     private final Position position;
+    private final MoveStrategy strategy;
 
-    public Car(String name) {
+    public Car(String name, MoveStrategy strategy) {
+        validateMoveStrategy(strategy);
         this.name = new Name(name);
         this.position = new Position();
+        this.strategy = strategy;
     }
 
-    public Car(String name, int position) {
+    public Car(String name, int position, MoveStrategy strategy) {
+        validateMoveStrategy(strategy);
         this.name = new Name(name);
         this.position = new Position(position);
+        this.strategy = strategy;
     }
 
-    private void validate(Name name, Position position) {
-        if (Objects.isNull(name) || Objects.isNull(position)) {
-            throw new IllegalArgumentException("Name and Position must be not null");
+    private void validateMoveStrategy(MoveStrategy strategy) {
+        if (Objects.isNull(strategy)) {
+            throw new IllegalArgumentException("MoveStrategy must be not null");
         }
     }
 
-    public void move(AbstractNumber randomNumber) {
-        if (randomNumber.isMoreThan(MOVE_PERMISSION_MIN_NUMBER)) {
-            position.moveOneStep();
-        }
+    public void move() {
+        strategy.move(this.position);
     }
 
     @Override

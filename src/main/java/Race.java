@@ -4,18 +4,15 @@ public class Race {
 
     private final Cars cars;
 
-    private final NumberFactory factory;
-
-    public Race(int tryCount, Cars cars, NumberFactory factory) {
+    public Race(int tryCount, Cars cars) {
         this.tryCount = new TryCount(tryCount);
         this.cars = cars;
-        this.factory = factory;
     }
 
     public void start() {
         int currentTryCount = 0;
         while (tryCount.isOverThan(currentTryCount)){
-            this.cars.move(factory);
+            this.cars.move();
             currentTryCount++;
         }
     }

@@ -20,8 +20,8 @@ public class Cars {
         }
     }
 
-    public void move(NumberFactory factory) {
-        cars.forEach(car -> car.move(factory.produce()));
+    public void move() {
+        cars.forEach(Car::move);
     }
 
     @Override
