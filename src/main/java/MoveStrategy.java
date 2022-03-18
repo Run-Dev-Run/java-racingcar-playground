@@ -1,3 +1,3 @@
 public interface MoveStrategy {
-    void move(Position position);
+    Position move(Position position);
 }

@@ -25,10 +25,11 @@ class PositionTest {
     }
 
     @Test
-    @DisplayName("moveOneStep()는 Position의 step을 1 증가 시킵니다.")
+    @DisplayName("moveOneStep()는 Position의 step을 1 증가 시킨 후 반환합니다..")
     void test_moveOneStep() {
-        position.moveOneStep();
+        Position result = this.position.moveOneStep();
+        Position expected = new Position(1);
 
-        assertThat(position).isEqualTo(new Position(1));
+        assertThat(result).isEqualTo(expected);
     }
 }

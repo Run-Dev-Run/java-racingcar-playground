@@ -3,7 +3,8 @@ import java.util.Objects;
 public class Position {
 
     private final int ZERO = 0;
-    private int step;
+
+    private final int step;
 
     public Position() {
         this.step = ZERO;
@@ -20,8 +21,8 @@ public class Position {
         }
     }
 
-    public void moveOneStep() {
-        step++;
+    public Position moveOneStep() {
+        return new Position(step + 1);
     }
 
     @Override

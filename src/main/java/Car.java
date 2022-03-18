@@ -2,9 +2,9 @@ import java.util.Objects;
 
 public class Car {
 
-    private final Name name;
-    private final Position position;
-    private final MoveStrategy strategy;
+    private Name name;
+    private Position position;
+    private MoveStrategy strategy;
 
     public Car(String name, MoveStrategy strategy) {
         validateMoveStrategy(strategy);
@@ -26,8 +26,8 @@ public class Car {
         }
     }
 
-    public void move() {
-        strategy.move(this.position);
+    public void moveByStrategy() {
+        this.position = strategy.move(this.position);
     }
 
     @Override

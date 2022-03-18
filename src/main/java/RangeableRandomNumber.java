@@ -1,4 +1,4 @@
-public class RandomNumber extends AbstractNumber {
+public class RangeableRandomNumber extends AbstractNumber {
 
     private static final int MIN_RANDOM_NUMBER = 0;
     private static final int MAX_RANDOM_NUMBER = 9;
@@ -7,7 +7,7 @@ public class RandomNumber extends AbstractNumber {
 
     private final int min;
 
-    public RandomNumber(int number) {
+    public RangeableRandomNumber(int number) {
         super(number);
         this.max = MAX_RANDOM_NUMBER;
         this.min = MIN_RANDOM_NUMBER;
@@ -16,7 +16,7 @@ public class RandomNumber extends AbstractNumber {
 
     private void validate(int number) {
         if (number < min || number > max) {
-            throw new IllegalArgumentException("RandomNumber는 " + min + " 보다 크고 " + max + "보다 작아야 합니다.");
+            throw new IllegalArgumentException("RangeableRandomNumber는 " + min + " 보다 크고 " + max + "보다 작아야 합니다.");
         }
     }
 

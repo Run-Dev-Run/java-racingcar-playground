@@ -12,17 +12,17 @@ public class CarTest {
     private static final String DEFAULT_CAR_NAME = "name";
 
     @ParameterizedTest
-    @DisplayName("move()는 4이상의 수가 입력될 경우 1칸 전진하고 아닐 경우 그대로 정지합니다.")
-    @MethodSource("provideRandomNumberForMoving")
+    @DisplayName("moveByStrategy()는 주어진 전략에 따라 자동차를 움직입니다.")
+    @MethodSource("provideRandomNumberFactory")
     void test_move(NumberFactory fakeRandomNumberFactory, Car expected) {
 
         Car car = new Car(DEFAULT_CAR_NAME, new MoveByRandomNumberStrategy(fakeRandomNumberFactory));
-        car.move();
+        car.moveByStrategy();
 
         assertThat(car).isEqualTo(expected);
     }
 
-    private static Stream<Arguments> provideRandomNumberForMoving() {
+    private static Stream<Arguments> provideRandomNumberFactory() {
         int stoppedPositionNumber = 0;
         int oneStepMovedPositionNumber = 1;
         FakeRandomNumberFactory TreeNumberFactory = new FakeRandomNumberFactory(3);
