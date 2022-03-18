@@ -1,8 +1,8 @@
-public class FakeRandomNumberFactory extends NumberFactory {
+public class FakeRandomAbstractNumberFactory extends AbstractNumberFactory {
 
     private int fakeNumber;
 
-    public FakeRandomNumberFactory(int fakeNumber) {
+    public FakeRandomAbstractNumberFactory(int fakeNumber) {
         this.fakeNumber = fakeNumber;
     }
 

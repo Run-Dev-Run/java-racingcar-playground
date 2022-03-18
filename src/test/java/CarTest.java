@@ -14,9 +14,9 @@ public class CarTest {
     @ParameterizedTest
     @DisplayName("moveByStrategy()는 주어진 전략에 따라 자동차를 움직입니다.")
     @MethodSource("provideRandomNumberFactory")
-    void moveByStrategy는_주어진_전략에_따라_자동차를_움직입니다(NumberFactory fakeRandomNumberFactory, Car expected) {
+    void moveByStrategy는_주어진_전략에_따라_자동차를_움직입니다(AbstractNumberFactory fakeRandomAbstractNumberFactory, Car expected) {
 
-        Car car = new Car(DEFAULT_CAR_NAME, new MoveByRandomNumberStrategy(fakeRandomNumberFactory));
+        Car car = new Car(DEFAULT_CAR_NAME, new MoveByRandomNumberStrategy(fakeRandomAbstractNumberFactory));
         car.moveByStrategy();
 
         assertThat(car).isEqualTo(expected);
@@ -25,8 +25,8 @@ public class CarTest {
     private static Stream<Arguments> provideRandomNumberFactory() {
         int stoppedPositionNumber = 0;
         int oneStepMovedPositionNumber = 1;
-        FakeRandomNumberFactory TreeNumberFactory = new FakeRandomNumberFactory(3);
-        FakeRandomNumberFactory FourNumberFactory = new FakeRandomNumberFactory(4);
+        FakeRandomAbstractNumberFactory TreeNumberFactory = new FakeRandomAbstractNumberFactory(3);
+        FakeRandomAbstractNumberFactory FourNumberFactory = new FakeRandomAbstractNumberFactory(4);
         Car stoppedCar = new Car(DEFAULT_CAR_NAME, stoppedPositionNumber, new MoveByRandomNumberStrategy(TreeNumberFactory));
         Car oneStepMoveCar = new Car(DEFAULT_CAR_NAME, oneStepMovedPositionNumber, new MoveByRandomNumberStrategy(FourNumberFactory));
 

@@ -34,7 +34,7 @@ class CarsTest {
     void test_move() {
         List<String> inputCarNames = Arrays.asList("a", "b", "c", "d", "e");
         int fakeNumber = 5;
-        MoveStrategy strategy = new MoveByRandomNumberStrategy(new FakeRandomNumberFactory(fakeNumber));
+        MoveStrategy strategy = new MoveByRandomNumberStrategy(new FakeRandomAbstractNumberFactory(fakeNumber));
         List<Car> resultCarList = new ArrayList<>(
             inputCarNames.stream()
             .map(s -> new Car(s, 1, strategy))

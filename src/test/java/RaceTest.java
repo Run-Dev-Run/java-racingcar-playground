@@ -1,6 +1,5 @@
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,7 +21,7 @@ public class RaceTest {
     void setUp() {
         inputCarNames = Arrays.asList("a", "b", "c", "d", "e");
         int fakeNumber = 5;
-        strategy = new MoveByRandomNumberStrategy(new FakeRandomNumberFactory(fakeNumber));
+        strategy = new MoveByRandomNumberStrategy(new FakeRandomAbstractNumberFactory(fakeNumber));
         cars = new Cars(
             inputCarNames.stream()
                 .map(s -> new Car(s, strategy))
