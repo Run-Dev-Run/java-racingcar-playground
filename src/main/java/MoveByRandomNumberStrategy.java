@@ -1,15 +1,15 @@
 public class MoveByRandomNumberStrategy implements MoveStrategy{
 
-    private final int MOVABLE_CAR_MIN_NUMBER = 4;
-    private final AbstractNumberFactory factory;
+    public static final int MOVABLE_CAR_MIN_NUMBER = 4;
+    private final AbstractRandomNumberFactory factory;
 
-    public MoveByRandomNumberStrategy(AbstractNumberFactory factory) {
+    public MoveByRandomNumberStrategy(AbstractRandomNumberFactory factory) {
         this.factory = factory;
     }
 
     @Override
     public Position move(Position position) {
-        AbstractNumber randomNumber = factory.produce();
+        AbstractRandomNumber randomNumber = factory.produce();
         if (randomNumber.isMoreThan(MOVABLE_CAR_MIN_NUMBER)) {
             return position.moveOneStep();
         }

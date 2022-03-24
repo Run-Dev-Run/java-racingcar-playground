@@ -11,9 +11,9 @@ class MoveByRandomNumberStrategyTest {
 
     @ParameterizedTest
     @MethodSource("provideFakeRandomNumberForMoving")
-    void move는_4이상의_수를_입력하면_1칸_움직인_Position을_반환합니다(int fakeNumber, Position expect) {
+    void move는_MOVABLE_CAR_MIN_NUMBER_이상의_수를_입력하면_1칸_움직인_Position을_반환합니다(int fakeNumber, Position expect) {
         Position position = new Position();
-        MoveStrategy strategy = new MoveByRandomNumberStrategy(new FakeRandomAbstractNumberFactory(fakeNumber));
+        MoveStrategy strategy = new MoveByRandomNumberStrategy(new FakeRandomNumberFactory(fakeNumber));
         Position result = strategy.move(position);
 
         assertThat(result).isEqualTo(expect);
@@ -24,8 +24,8 @@ class MoveByRandomNumberStrategyTest {
         Position position = new Position(step);
         Position movedPosition = new Position(step + 1);
 
-        int fakeNumberForStop = 3;
-        int fakeNumberForMove = 4;
+        int fakeNumberForStop = MoveByRandomNumberStrategy.MOVABLE_CAR_MIN_NUMBER - 1;
+        int fakeNumberForMove = MoveByRandomNumberStrategy.MOVABLE_CAR_MIN_NUMBER;
 
         return Stream.of(
             Arguments.of(fakeNumberForStop, position),

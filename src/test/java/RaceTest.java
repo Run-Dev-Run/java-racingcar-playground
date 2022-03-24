@@ -21,7 +21,7 @@ public class RaceTest {
     void setUp() {
         inputCarNames = Arrays.asList("a", "b", "c", "d", "e");
         int fakeNumber = 5;
-        strategy = new MoveByRandomNumberStrategy(new FakeRandomAbstractNumberFactory(fakeNumber));
+        strategy = new MoveByRandomNumberStrategy(new FakeRandomNumberFactory(fakeNumber));
         cars = new Cars(
             inputCarNames.stream()
                 .map(s -> new Car(s, strategy))

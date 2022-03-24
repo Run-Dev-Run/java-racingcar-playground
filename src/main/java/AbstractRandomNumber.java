@@ -1,8 +1,8 @@
-public abstract class AbstractNumber {
+public abstract class AbstractRandomNumber {
 
     private final int number;
 
-    public AbstractNumber(int number) {
+    public AbstractRandomNumber(int number) {
         this.number = number;
     }
 
