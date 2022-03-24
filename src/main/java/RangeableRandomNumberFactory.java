@@ -1,12 +1,12 @@
 import java.util.Random;
 
-public class RangeableRandomAbstractNumberFactory extends AbstractNumberFactory {
+public class RangeableRandomNumberFactory extends AbstractNumberFactory {
 
     public final int MAX_RANDOM_NUMBER = 9;
 
     private final Random random;
 
-    public RangeableRandomAbstractNumberFactory() {
+    public RangeableRandomNumberFactory() {
         random = new Random();
     }
 

@@ -12,12 +12,11 @@ public class CarTest {
     private static final String DEFAULT_CAR_NAME = "name";
 
     @ParameterizedTest
-    @DisplayName("moveByStrategy()는 주어진 전략에 따라 자동차를 움직입니다.")
     @MethodSource("provideRandomNumberFactory")
-    void moveByStrategy는_주어진_전략에_따라_자동차를_움직입니다(AbstractNumberFactory fakeRandomAbstractNumberFactory, Car expected) {
+    void move_메서드는_주어진_전략에_따라_자동차를_움직입니다(AbstractNumberFactory fakeRandomAbstractNumberFactory, Car expected) {
 
         Car car = new Car(DEFAULT_CAR_NAME, new MoveByRandomNumberStrategy(fakeRandomAbstractNumberFactory));
-        car.moveByStrategy();
+        car.move();
 
         assertThat(car).isEqualTo(expected);
     }

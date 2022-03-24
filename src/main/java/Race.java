@@ -10,7 +10,10 @@ public class Race {
     }
 
     public void start() {
-        tryCount.startTryUpToTryCount(cars);
+        while (!this.tryCount.isComplete()) {
+            cars.move();
+            this.tryCount = tryCount.getNextTryCount();
+        }
     }
 
 }

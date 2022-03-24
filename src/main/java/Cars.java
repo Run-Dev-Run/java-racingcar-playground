@@ -21,7 +21,7 @@ public class Cars {
     }
 
     public void move() {
-        cars.forEach(Car::moveByStrategy);
+        cars.forEach(Car::move);
     }
 
     @Override

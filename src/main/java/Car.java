@@ -26,7 +26,7 @@ public class Car {
         }
     }
 
-    public void moveByStrategy() {
+    public void move() {
         this.position = strategy.move(this.position);
     }
 
