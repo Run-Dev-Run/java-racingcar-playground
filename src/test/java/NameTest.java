@@ -9,17 +9,17 @@ class NameTest {
 
     private final String VALID_NAME = "12345";
     private final String INVALID_NAME = "123456";
-    private final String NAME_LENGTH_OVER_MESSAGE = "자동차 이름은 5자를 초과할 수 없다.";
+
+    private final int MAX_NAME_LENGTH = Name.MAX_NAME_LENGTH;
 
     @Test
-    void 이름의_길이는_5자를_초과_할_수_없다() {
+    void 이름의_길이는_MAX_NAME_LENGTH_자를_초과_할_수_없다() {
         assertThatThrownBy(() -> new Name(INVALID_NAME))
-            .isInstanceOf(IllegalArgumentException.class)
-            .hasMessage(NAME_LENGTH_OVER_MESSAGE);
+            .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
-    void 길이_5이하의_문자열을_통해_Name_객체를_생성한다() {
+    void 길이_MAX_NAME_LENGTH_이하의_문자열을_통해_Name_객체를_생성한다() {
         success(new Name(VALID_NAME));
     }
 

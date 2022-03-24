@@ -2,12 +2,12 @@ import java.util.Objects;
 
 public class Position {
 
-    private final int ZERO = 0;
+    private static final int DEFAULT_STEP_COUNT = 0;
 
     private final int step;
 
     public Position() {
-        this.step = ZERO;
+        this.step = DEFAULT_STEP_COUNT;
     }
 
     public Position(int step) {
@@ -16,7 +16,7 @@ public class Position {
     }
 
     private void validate(int step) {
-        if (step < ZERO) {
+        if (step < DEFAULT_STEP_COUNT) {
             throw new IllegalArgumentException("step에 음수를 입력할 수 없습니다.");
         }
     }
@@ -39,7 +39,7 @@ public class Position {
 
     @Override
     public int hashCode() {
-        return Objects.hash(ZERO, step);
+        return Objects.hash(DEFAULT_STEP_COUNT, step);
     }
 
 }
