@@ -6,17 +6,15 @@ public class Car {
     private Position position;
     private final MoveStrategy strategy;
 
+    public Car(String name, int position, MoveStrategy strategy) {
+        this(name, strategy);
+        this.position = new Position(position);
+    }
+
     public Car(String name, MoveStrategy strategy) {
         validateMoveStrategy(strategy);
         this.name = new Name(name);
         this.position = new Position();
-        this.strategy = strategy;
-    }
-
-    public Car(String name, int position, MoveStrategy strategy) {
-        validateMoveStrategy(strategy);
-        this.name = new Name(name);
-        this.position = new Position(position);
         this.strategy = strategy;
     }
 

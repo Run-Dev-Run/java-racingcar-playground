@@ -10,11 +10,10 @@ public class TryCount {
 
     private final int currentCount;
 
-    public TryCount(int count) {
-        validate(count);
-        this.count = count;
-        this.currentCount = 0;
-    }
+//    public TryCount(int count, int currentCount) {
+//        this(count);
+//        this.currentCount = currentCount;
+//    }
 
     public TryCount(int count, int currentCount) {
         validate(count);
@@ -22,6 +21,11 @@ public class TryCount {
         this.currentCount = currentCount;
     }
 
+    public TryCount(int count) {
+        validate(count);
+        this.count = count;
+        this.currentCount = DEFAULT_CURRENT_TRY_COUNT;
+    }
 
     private void validate(int count) {
         if (count <= MIN_TRY_COUNT) {
