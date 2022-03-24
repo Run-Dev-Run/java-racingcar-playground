@@ -30,19 +30,17 @@ class CarsTest {
     }
 
     @Test
-    @DisplayName("move()는 랜덤 숫자에 따라 Car를 전진시킵니다.")
-    void test_move() {
+    void move_메서드는_주어진_전략에_따라_Car들을_전진시킵니다() {
         List<String> inputCarNames = Arrays.asList("a", "b", "c", "d", "e");
-        int fakeNumber = 5;
-        MoveStrategy strategy = new MoveByRandomNumberStrategy(new FakeRandomNumberFactory(fakeNumber));
+        MoveStrategy fakeAbsoluteMoveStrategy = Position::moveOneStep;
         List<Car> resultCarList = new ArrayList<>(
             inputCarNames.stream()
-            .map(s -> new Car(s, 1, strategy))
+            .map(s -> new Car(s, 1, fakeAbsoluteMoveStrategy))
             .collect(Collectors.toList())
         );
         Cars cars = new Cars(
             inputCarNames.stream()
-                .map(s -> new Car(s, strategy))
+                .map(s -> new Car(s, fakeAbsoluteMoveStrategy))
                 .collect(Collectors.toList())
         );
 
