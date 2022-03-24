@@ -2,9 +2,9 @@ import java.util.Objects;
 
 public class Car {
 
-    private Name name;
+    private final Name name;
     private Position position;
-    private MoveStrategy strategy;
+    private final MoveStrategy strategy;
 
     public Car(String name, MoveStrategy strategy) {
         validateMoveStrategy(strategy);

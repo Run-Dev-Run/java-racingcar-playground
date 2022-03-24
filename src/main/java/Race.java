@@ -2,7 +2,7 @@ public class Race {
 
     private TryCount tryCount;
 
-    private Cars cars;
+    private final Cars cars;
 
     public Race(int tryCount, Cars cars) {
         this.tryCount = new TryCount(tryCount);
